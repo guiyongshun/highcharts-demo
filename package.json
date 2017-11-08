@@ -1,0 +1,11 @@
+{
+  "name": "hicharts-demo",
+  "version": "1.0.0",
+  "description": "learn HighCharts",
+  "main": "index.js",
+  "author": "Misery Gui",
+  "license": "MIT",
+  "dependencies": {
+    "highcharts": "5.0.14"
+  }
+}

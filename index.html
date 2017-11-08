@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hicharts Demo</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0
+        }
+        #container{
+            width: 1300px;
+            height: 250px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+
+    <script src="node_modules/highcharts/highcharts.js"></script>
+    <script>
+        var options = {
+            chart: {
+                type: 'areaspline',
+                backgroundColor: '#CFECFE',
+            },
+            title: {
+                text: ''
+            },
+            legend: {
+                enabled: false
+            },
+            credits: {
+                enabled: false
+            },
+            tooltip: {
+                pointFormat: '<b> ${point.y:,.0f} </b>'
+            },
+            plotOptions: {
+                series: {
+                    marker: {
+                        enabled: false
+                    }
+                },
+                areaspline: {
+                    color: '#B7E2FC',
+                    lineColor:'#28A9F9',
+                    lineWidth: 2,
+                }
+            },
+            xAxis: {
+                tickmarkPlacement: 'on',
+                lineWidth: 1,
+                lineColor: '#e8e8e8',
+                type: 'datetime',
+                labels: {
+                    style: {
+                        color: '#58BCFA',
+                    }
+                },
+                gridLineWidth: 0,//隐藏网格线
+                startOnTick: true,
+                endOnTick: true,
+                tickColor: '#CFECFE',
+                categories: ['00:00','02:00','04:00','06:00','08:00','10:00','12:00','14:00','16:00','18:00','20:00','22:00','24:00'],
+            },
+            yAxis: [
+                {
+                    title: {
+                        enabled: false
+                    },
+                    labels: {
+                        formatter: function() {
+                            return '$' + this.value
+                        },
+                        style: {
+                            color: '#58BCFA',
+                        }
+                    },
+                    gridLineWidth: 0,//隐藏网格线
+                    showFirstLabel: false,　//隐藏首个标签
+                    showLastLabel: false,　//隐藏尾部标签
+                    // tickInterval: 50 //
+                }
+            ],
+            series: [
+                {
+                    data: [0,10,20,40,35,70,50,37,90,50,30,17,0]
+                }
+            ]
+        }
+
+        var chart = Highcharts.chart('container',options)
+    
+    </script>
+</body>
+</html>
