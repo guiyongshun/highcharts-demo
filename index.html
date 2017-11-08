@@ -14,10 +14,16 @@
             width: 1300px;
             height: 250px;
         }
+        #container2{
+            width: 1300px;
+            height: 250px;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
     <div id="container"></div>
+    <div id="container2"></div>
 
     <script src="//cdn.bootcss.com/highcharts/5.0.14/highcharts.js"></script>
     <script>
@@ -87,12 +93,37 @@
             ],
             series: [
                 {
-                    data: [0,10,20,40,35,70,50,37,90,50,30,17,0]
+                    data: [0,10000000,10040000,20000000,30000000,60000000,68000000,50000000,40000000,45000000,3086867,17868686,0]
                 }
             ]
         }
 
-        var chart = Highcharts.chart('container',options)
+        var options2 = Object.assign({},options,{
+            xAxis: {
+                tickmarkPlacement: 'on',
+                lineWidth: 1,
+                lineColor: '#e8e8e8',
+                type: 'datetime',
+                labels: {
+                    style: {
+                        color: '#58BCFA',
+                    }
+                },
+                gridLineWidth: 0,//隐藏网格线
+                startOnTick: true,
+                endOnTick: true,
+                tickColor: '#CFECFE',
+                categories: ['1日','2日','3日','4日','5日','6日','7日','8日','9日','10日','11日','12日','13日','14日','15日','16日','17日','18日','19日','20日','21日','22日','23日','24日','25日','26日','27日','28日','29日','30日','31日'],
+            },
+            series: [
+                {
+                    data: [0,200,4000,80000,160000,800000,68000000,50000000,40000000,45000000,3086867,17868686,4548775,414545,45455343545,546488477,46556,45545,464665465,564654,565,65,646654,564564564,65455,564545,654545,545465655,546456456,56465545,0]
+                }
+            ]
+        })
+
+        var chart = new Highcharts.chart('container',options)
+        var chart2 = new Highcharts.chart('container2',options2)
     
     </script>
 </body>
